@@ -5,6 +5,7 @@ import ProductShowcase from "@/components/sections/ProductShowcase";
 import type { ShowcasePanel } from "@/components/sections/ProductShowcase";
 import ProductSection from "@/components/sections/ProductSection";
 import TeamSection from "@/components/sections/TeamSection";
+import ContactSection from "@/components/sections/ContactSection";
 import CommandPalette from "@/components/CommandPalette";
 
 /* ───────────────────────────────────────────────────────────────
@@ -685,6 +686,8 @@ export default function Home() {
       />
 
       <TeamSection />
+
+      <ContactSection />
     </main>
   );
 }

@@ -966,3 +966,358 @@ body {
     font-size: 2.8rem;
   }
 }
+
+/* ═══════════════════════════════════════════════════════════════
+   CONTACT SECTION
+   ═══════════════════════════════════════════════════════════════ */
+
+.world-contact {
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 30%, rgba(0,255,209,0.06) 0%, transparent 70%),
+    radial-gradient(ellipse 50% 50% at 10% 80%, rgba(74,108,247,0.05) 0%, transparent 60%),
+    linear-gradient(180deg, #050508 0%, #08080f 50%, #050508 100%);
+}
+
+.contact-container {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 80px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+
+.contact-header {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.contact-title {
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 700;
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  color: #fff;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+}
+
+.contact-title-accent {
+  color: #00FFD1;
+}
+
+.contact-subtitle {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.45);
+  max-width: 480px;
+  line-height: 1.7;
+  text-align: center;
+}
+
+/* ─── Form Card ───────────────────────────────────────────────── */
+.contact-card {
+  width: 100%;
+  background: rgba(255,255,255,0.025);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 24px;
+  padding: 40px;
+  backdrop-filter: blur(16px);
+  box-shadow:
+    0 0 0 1px rgba(0,255,209,0.04),
+    0 30px 80px -20px rgba(0,0,0,0.5);
+}
+
+.contact-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.contact-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.contact-label {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.7rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: rgba(255,255,255,0.4);
+}
+
+.contact-input,
+.contact-textarea {
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.1);
+  color: #fff;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.3s, box-shadow 0.3s, background 0.3s;
+  resize: none;
+}
+
+.contact-input::placeholder,
+.contact-textarea::placeholder {
+  color: rgba(255,255,255,0.2);
+}
+
+.contact-input:focus,
+.contact-textarea:focus {
+  border-color: rgba(0,255,209,0.4);
+  background: rgba(0,255,209,0.03);
+  box-shadow: 0 0 0 3px rgba(0,255,209,0.08);
+}
+
+.contact-input:disabled,
+.contact-textarea:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.contact-input-error {
+  border-color: rgba(255,80,80,0.5) !important;
+  box-shadow: 0 0 0 3px rgba(255,80,80,0.08) !important;
+}
+
+.contact-error {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.65rem;
+  color: rgba(255,100,100,0.8);
+  margin-top: 2px;
+}
+
+/* ─── Submit Button ───────────────────────────────────────────── */
+.contact-btn {
+  width: 100%;
+  padding: 16px 28px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(0,255,209,0.15), rgba(0,200,170,0.1));
+  border: 1px solid rgba(0,255,209,0.35);
+  color: #00FFD1;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  letter-spacing: 0.01em;
+  margin-top: 8px;
+}
+
+.contact-btn:hover:not(:disabled) {
+  background: linear-gradient(135deg, rgba(0,255,209,0.25), rgba(0,200,170,0.18));
+  border-color: rgba(0,255,209,0.6);
+  box-shadow: 0 0 40px rgba(0,255,209,0.2);
+  transform: translateY(-2px);
+}
+
+.contact-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.contact-btn-loading {
+  animation: contact-pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes contact-pulse {
+  0%, 100% { opacity: 0.7; }
+  50% { opacity: 1; }
+}
+
+.contact-btn-arrow {
+  transition: transform 0.3s;
+}
+
+.contact-btn:hover .contact-btn-arrow {
+  transform: translateX(4px);
+}
+
+.contact-btn-spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(0,255,209,0.3);
+  border-top-color: #00FFD1;
+  border-radius: 50%;
+  animation: spin-contact 0.8s linear infinite;
+  flex-shrink: 0;
+}
+
+@keyframes spin-contact {
+  to { transform: rotate(360deg); }
+}
+
+/* ─── Success State ───────────────────────────────────────────── */
+.contact-success {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 24px 0;
+  gap: 16px;
+}
+
+.contact-success-icon {
+  font-size: 3rem;
+  animation: success-bounce 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes success-bounce {
+  from { transform: scale(0) rotate(-15deg); opacity: 0; }
+  to { transform: scale(1) rotate(0deg); opacity: 1; }
+}
+
+.contact-success-title {
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 700;
+  font-size: 1.8rem;
+  color: #00FFD1;
+}
+
+.contact-success-text {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.45);
+  max-width: 360px;
+  line-height: 1.7;
+}
+
+/* ─── Info chips ──────────────────────────────────────────────── */
+.contact-info-row {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.contact-info-chip {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.07);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.7rem;
+  color: rgba(255,255,255,0.4);
+}
+
+/* ─── Responsive ──────────────────────────────────────────────── */
+@media (max-width: 640px) {
+  .contact-card {
+    padding: 28px 20px;
+  }
+
+  .contact-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-info-row {
+    gap: 10px;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   AVATAR RUNNER OVERLAY
+   ═══════════════════════════════════════════════════════════════ */
+
+.avatar-runner-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.avatar-runner-wrapper {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  gap: 0;
+  will-change: transform;
+}
+
+.avatar-runner-canvas {
+  width: 160px !important;
+  height: 160px !important;
+  flex-shrink: 0;
+}
+
+/* Glow trail behind the avatar */
+.avatar-runner-trail {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 200px;
+  height: 80px;
+  left: -180px;
+  border-radius: 50%;
+  filter: blur(20px);
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+/* Speed lines */
+.avatar-runner-speed-lines {
+  position: absolute;
+  top: 50%;
+  right: 100%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-right: 16px;
+}
+
+.avatar-runner-speed-lines.reverse {
+  right: auto;
+  left: 100%;
+  padding-right: 0;
+  padding-left: 16px;
+}
+
+.speed-line {
+  height: 2px;
+  background: linear-gradient(to left, rgba(0,255,209,0.7), transparent);
+  border-radius: 1px;
+  animation: speed-line-anim 0.4s ease-out infinite;
+}
+
+.speed-line:nth-child(1) { width: 60px; }
+.speed-line:nth-child(2) { width: 90px; }
+.speed-line:nth-child(3) { width: 50px; }
+.speed-line:nth-child(4) { width: 75px; }
+.speed-line:nth-child(5) { width: 40px; }
+
+.avatar-runner-speed-lines.reverse .speed-line {
+  background: linear-gradient(to right, rgba(0,255,209,0.7), transparent);
+}
+
+@keyframes speed-line-anim {
+  0% { opacity: 0; transform: scaleX(0); }
+  50% { opacity: 1; transform: scaleX(1); }
+  100% { opacity: 0; transform: scaleX(1); }
+}
+

@@ -8,6 +8,7 @@ const sections = [
   { id: "biteroute", name: "BiteRoute", icon: "🚀", description: "Logística para Dark Kitchens", accent: "#FF6B35" },
   { id: "smartliving", name: "SmartLiving", icon: "🏢", description: "Gestión de condominios", accent: "#4A6CF7" },
   { id: "team", name: "The Founders", icon: "👥", description: "El equipo detrás de Nibs", accent: "#00FFD1" },
+  { id: "contact", name: "Solicita tu Demo", icon: "🚀", description: "Contáctanos y muéstranos tu idea", accent: "#00FFD1" },
 ];
 
 export default function CommandPalette() {
