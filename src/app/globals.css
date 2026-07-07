@@ -53,41 +53,50 @@ body {
   overflow: hidden;
 }
 
-/* ─── World backgrounds ────────────────────────────────────── */
+/* ─── 3D Scene layer (canvas fijo detrás de todo) ──────────── */
+.scene3d {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Viñeta: enfoca el centro, oscurece bordes para legibilidad */
+.scene3d::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, transparent 50%, rgba(3,3,6,0.6) 100%);
+}
+
+main {
+  position: relative;
+  z-index: 1;
+}
+
+/* ─── World backgrounds ────────────────────────────────────────
+   Transparentes: el mundo 3D vive detrás. Solo tinte de color
+   por sección para mantener identidad cromática. */
 .world-hero {
-  background: 
-    radial-gradient(ellipse 80% 60% at 50% 40%, rgba(0,255,209,0.08) 0%, transparent 70%),
-    radial-gradient(ellipse 60% 40% at 20% 80%, rgba(74,108,247,0.06) 0%, transparent 60%),
-    linear-gradient(180deg, #050508 0%, #0a0e1a 100%);
+  background: radial-gradient(ellipse 80% 60% at 50% 40%, rgba(0,255,209,0.06) 0%, transparent 70%);
 }
 
 .world-ares {
-  background:
-    radial-gradient(ellipse 70% 50% at 70% 30%, rgba(0,255,209,0.12) 0%, transparent 60%),
-    radial-gradient(ellipse 50% 50% at 10% 70%, rgba(0,200,170,0.06) 0%, transparent 50%),
-    linear-gradient(160deg, #040a0d 0%, #0a1a1f 40%, #061210 100%);
+  background: radial-gradient(ellipse 70% 50% at 70% 30%, rgba(0,255,209,0.07) 0%, transparent 60%);
 }
 
 .world-biteroute {
-  background:
-    radial-gradient(ellipse 70% 50% at 30% 40%, rgba(255,107,53,0.12) 0%, transparent 60%),
-    radial-gradient(ellipse 50% 50% at 80% 80%, rgba(255,140,80,0.06) 0%, transparent 50%),
-    linear-gradient(160deg, #0d0804 0%, #1a100a 40%, #120d06 100%);
+  background: radial-gradient(ellipse 70% 50% at 30% 40%, rgba(255,107,53,0.07) 0%, transparent 60%);
 }
 
 .world-smartliving {
-  background:
-    radial-gradient(ellipse 70% 50% at 60% 50%, rgba(74,108,247,0.12) 0%, transparent 60%),
-    radial-gradient(ellipse 40% 40% at 20% 20%, rgba(100,130,255,0.06) 0%, transparent 50%),
-    linear-gradient(160deg, #04050d 0%, #0a0e1f 40%, #060812 100%);
+  background: radial-gradient(ellipse 70% 50% at 60% 50%, rgba(74,108,247,0.07) 0%, transparent 60%);
 }
 
 .world-team {
   background:
-    radial-gradient(ellipse 40% 30% at 20% 50%, rgba(0,255,209,0.06) 0%, transparent 60%),
-    radial-gradient(ellipse 40% 30% at 80% 50%, rgba(255,107,53,0.06) 0%, transparent 60%),
-    radial-gradient(ellipse 40% 30% at 50% 80%, rgba(74,108,247,0.06) 0%, transparent 60%),
-    linear-gradient(180deg, #050508 0%, #08080f 50%, #050508 100%);
+    radial-gradient(ellipse 40% 30% at 20% 50%, rgba(0,255,209,0.05) 0%, transparent 60%),
+    radial-gradient(ellipse 40% 30% at 80% 50%, rgba(255,107,53,0.05) 0%, transparent 60%);
 }
 
 /* ─── Divider lines between worlds ─────────────────────────── */
@@ -496,6 +505,13 @@ body {
 .showcase-text {
   flex: 1;
   min-width: 0;
+  /* panel glass: legibilidad sobre el mundo 3D */
+  padding: 32px;
+  border-radius: 24px;
+  background: rgba(5, 5, 10, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
 }
 
 .showcase-visual {
@@ -972,10 +988,7 @@ body {
    ═══════════════════════════════════════════════════════════════ */
 
 .world-contact {
-  background:
-    radial-gradient(ellipse 80% 60% at 50% 30%, rgba(0,255,209,0.06) 0%, transparent 70%),
-    radial-gradient(ellipse 50% 50% at 10% 80%, rgba(74,108,247,0.05) 0%, transparent 60%),
-    linear-gradient(180deg, #050508 0%, #08080f 50%, #050508 100%);
+  background: radial-gradient(ellipse 80% 60% at 50% 30%, rgba(0,255,209,0.05) 0%, transparent 70%);
 }
 
 .contact-container {

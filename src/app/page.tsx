@@ -1,5 +1,6 @@
 "use client";
 
+import dynamic from "next/dynamic";
 import HeroSection from "@/components/sections/HeroSection";
 import ProductShowcase from "@/components/sections/ProductShowcase";
 import type { ShowcasePanel } from "@/components/sections/ProductShowcase";
@@ -7,6 +8,8 @@ import ProductSection from "@/components/sections/ProductSection";
 import TeamSection from "@/components/sections/TeamSection";
 import ContactSection from "@/components/sections/ContactSection";
 import CommandPalette from "@/components/CommandPalette";
+
+const Scene3D = dynamic(() => import("@/components/three/Scene3D"), { ssr: false });
 
 /* ───────────────────────────────────────────────────────────────
    PHONE MOCKUP SCREENS — G-PULSE
@@ -651,6 +654,7 @@ const biterouteFeatures = [
 export default function Home() {
   return (
     <main>
+      <Scene3D />
       <CommandPalette />
       <HeroSection />
 
