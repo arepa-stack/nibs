@@ -7,7 +7,7 @@ import * as THREE from "three";
 
 /* ─── 3D Model inside the canvas ─────────────────────────────── */
 function AvatarModel({ spinning }: { spinning: boolean }) {
-  const gltf = useGLTF("/Meshy_AI_Circuit_Egg_0403235903_texture.glb");
+  const gltf = useGLTF("/round+cartoon+robot+3d+model.glb");
   const modelRef = useRef<THREE.Group>(null);
 
   useFrame((_, delta) => {

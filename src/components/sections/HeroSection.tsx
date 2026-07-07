@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, useEffect } from "react";
+import AvatarMouseTracker from "@/components/AvatarMouseTracker";
 
 export default function HeroSection() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -78,8 +79,8 @@ export default function HeroSection() {
       />
 
       {/* Content */}
-      <div className="relative z-10 text-center px-6 max-w-5xl mx-auto">
-        <div ref={headlineRef} className="overflow-hidden">
+      <div className="relative z-10 text-center px-6 max-w-5xl mx-auto flex flex-col items-center justify-center">
+        <div ref={headlineRef} className="overflow-hidden relative z-10">
           <div className="hero-line">
             <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-display font-bold text-white leading-[0.95] tracking-tight">
               No esperamos
@@ -104,6 +105,11 @@ export default function HeroSection() {
           Somos un laboratorio de software. Construimos, iteramos y lanzamos
           productos digitales de alto impacto.
         </p>
+
+        {/* Avatar placed below text */}
+        <div className="mt-10 z-20 pointer-events-auto">
+          <AvatarMouseTracker />
+        </div>
       </div>
 
       {/* Scroll indicator */}
